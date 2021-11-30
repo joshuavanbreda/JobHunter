@@ -163,7 +163,7 @@ public class Player : MonoBehaviour
                 docBal1.gameObject.SetActive(true);
                 docBal2.gameObject.SetActive(false);
 
-                toolBox.SetActive(false);
+                toTo.SetActive(false);
                 Instantiate(particleHearts, particlesPosition.transform.position, Quaternion.identity);
             }
 
@@ -178,6 +178,7 @@ public class Player : MonoBehaviour
                 docBal1.gameObject.SetActive(false);
                 docBal2.gameObject.SetActive(true);
 
+                toolBox.SetActive(false);
                 Instantiate(particlePlumber, particlesPosition.transform.position, Quaternion.identity);
             }
         }
