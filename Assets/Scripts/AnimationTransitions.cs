@@ -40,7 +40,7 @@ public class AnimationTransitions : MonoBehaviour
         animationFail.SetBool("isDancing", true);
         animationFail.SetBool("isDefeated", false);
 
-        animationWin.SetBool("isVictorius", true);
+        //animationWin.SetBool("isVictorius", true);
 
     }
 

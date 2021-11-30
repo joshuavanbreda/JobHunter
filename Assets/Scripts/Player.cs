@@ -4,20 +4,27 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [Header("Score")]
+    public ScoreBar scoreBar;
     public int maxScore = 100;
     public int currentScore;
+    public bool win;
 
+    [Header("Doorways")]
     public int CorrectDoorValue;
     public int IncorrectDoorValue;
     public int PickUpValue;
     public int ObstacleLoseValue;
 
+    [Header("Particles")]
+    public GameObject particlesPosition;
     public ParticleSystem particleHearts;
-    public GameObject particlePlus;
-    public GameObject particlePlumber;
-    public GameObject particlePowerUp;
-    public GameObject particleWin;
+    public ParticleSystem particlePlus;
+    public ParticleSystem particlePlumber;
+    public ParticleSystem particlePowerUp;
+    public ParticleSystem particleWin;
 
+    [Header("Character Gameobjects")]
     public GameObject nakedPlayer;
 
     public GameObject doc1;
@@ -27,7 +34,14 @@ public class Player : MonoBehaviour
     public GameObject docBal1;
     public GameObject docBal2;
 
-    public ScoreBar scoreBar;
+    [Header("Door GameObjects")]
+    public GameObject shoes;
+    public GameObject coat;
+    public GameObject toTo;
+    public GameObject hat;
+    public GameObject toolBox;
+    public GameObject doctorBag;
+
 
     void Start()
     {
@@ -40,13 +54,6 @@ public class Player : MonoBehaviour
         doc3.gameObject.SetActive(false);
         docBal1.gameObject.SetActive(false);
         docBal2.gameObject.SetActive(false);
-
-        particlePowerUp.gameObject.SetActive(false);
-        particlePlumber.gameObject.SetActive(false);
-        particleWin.gameObject.SetActive(false);
-        particlePlus.gameObject.SetActive(false);
-        particleHearts.gameObject.SetActive(false);
-
     }
 
     void Update()
@@ -59,26 +66,29 @@ public class Player : MonoBehaviour
 
         if (other.tag == "PickUp")
         {
+            Instantiate(particlePlus, particlesPosition.transform.position, Quaternion.identity);
             TakeScore(PickUpValue);
-            //other.gameObject.SetActive(false);
             Debug.Log(currentScore);
             other.gameObject.SetActive(false);
-            //GetComponent<ParticleSystem>().Play();
+
+            
         }
 
         if (other.tag == "BadPickUp")
         {
             TakeScore(-PickUpValue);
             Debug.Log(currentScore);
+
             other.gameObject.SetActive(false);
         }
 
 
         if (other.tag == "CorrectDoor")
         {
+
+            Instantiate(particlePowerUp, particlesPosition.transform.position, Quaternion.identity);
             other.gameObject.SetActive(false);
             TakeScore(CorrectDoorValue);
-            //other.gameObject.SetActive(false);
             Debug.Log(currentScore);
             if (other.gameObject.name == "CorrectChange1")
             {
@@ -88,6 +98,8 @@ public class Player : MonoBehaviour
                 doc3.gameObject.SetActive(false);
                 docBal1.gameObject.SetActive(false);
                 docBal2.gameObject.SetActive(false);
+
+                coat.SetActive(false);
             }
 
             if (other.gameObject.name == "CorrectChange2")
@@ -98,15 +110,20 @@ public class Player : MonoBehaviour
                 doc3.gameObject.SetActive(false);
                 docBal1.gameObject.SetActive(false);
                 docBal2.gameObject.SetActive(false);
+
+                hat.SetActive(false);
             }
             if(other.gameObject.name == "CorrectChange3")
             {
+                win = true;
                 nakedPlayer.gameObject.SetActive(false);
                 doc1.gameObject.SetActive(false);
                 doc2.gameObject.SetActive(false);
                 doc3.gameObject.SetActive(true);
                 docBal1.gameObject.SetActive(false);
                 docBal2.gameObject.SetActive(false);
+
+                doctorBag.SetActive(false);
             }
         }
 
@@ -115,7 +132,6 @@ public class Player : MonoBehaviour
             other.gameObject.SetActive(false);
 
             TakeScore(ObstacleLoseValue);
-            //other.gameObject.SetActive(false);
             Debug.Log(currentScore);
         }
 
@@ -124,13 +140,15 @@ public class Player : MonoBehaviour
             other.gameObject.SetActive(false);
 
             TakeScore(IncorrectDoorValue);
-            //other.gameObject.SetActive(false);
+
             Debug.Log(currentScore);
 
             if(other.gameObject.name == "IncorrectChange3")
             {
                 other.gameObject.SetActive(false);
 
+                shoes.SetActive(false);
+                Instantiate(particleHearts, particlesPosition.transform.position, Quaternion.identity);
                 return;
             }
 
@@ -144,6 +162,9 @@ public class Player : MonoBehaviour
                 doc3.gameObject.SetActive(false);
                 docBal1.gameObject.SetActive(true);
                 docBal2.gameObject.SetActive(false);
+
+                toolBox.SetActive(false);
+                Instantiate(particleHearts, particlesPosition.transform.position, Quaternion.identity);
             }
 
             if (other.gameObject.name == "IncorrectChange1")
@@ -156,13 +177,15 @@ public class Player : MonoBehaviour
                 doc3.gameObject.SetActive(false);
                 docBal1.gameObject.SetActive(false);
                 docBal2.gameObject.SetActive(true);
+
+                Instantiate(particlePlumber, particlesPosition.transform.position, Quaternion.identity);
             }
         }
 
-        //if (other.tag == "EndLevelScene")
-        //{
-            
-        //}
+        if (other.tag == "EndLevelScene" && win == true)
+        {
+            Instantiate(particleWin, particlesPosition.transform.position, Quaternion.identity);
+        }
 
     }
 
