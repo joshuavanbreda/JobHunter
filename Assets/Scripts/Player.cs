@@ -83,7 +83,7 @@ public class Player : MonoBehaviour
         }
 
 
-        if (other.tag == "CorrectDoor")
+        if (other.tag == "DoctorDoor")
         {
 
             Instantiate(particlePowerUp, particlesPosition.transform.position, Quaternion.identity);
@@ -135,7 +135,7 @@ public class Player : MonoBehaviour
             Debug.Log(currentScore);
         }
 
-        if (other.tag == "IncorrectDoor")
+        if (other.tag == "BallerinaDoor")
         {
             other.gameObject.SetActive(false);
 
@@ -143,7 +143,7 @@ public class Player : MonoBehaviour
 
             Debug.Log(currentScore);
 
-            if(other.gameObject.name == "IncorrectChange3")
+            if(other.gameObject.name == "BallerinaChange1")
             {
                 other.gameObject.SetActive(false);
 
@@ -152,7 +152,7 @@ public class Player : MonoBehaviour
                 return;
             }
 
-            if(other.gameObject.name == "IncorrectChange2")
+            if(other.gameObject.name == "BallerinaChange2")
             {
                 other.gameObject.SetActive(false);
 
@@ -167,7 +167,7 @@ public class Player : MonoBehaviour
                 Instantiate(particleHearts, particlesPosition.transform.position, Quaternion.identity);
             }
 
-            if (other.gameObject.name == "IncorrectChange1")
+            if (other.gameObject.name == "BallerinaChange3")
             {
                 other.gameObject.SetActive(false);
 

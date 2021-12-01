@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028346, g: 0.22571373, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,6 +123,51 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &73369933
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 73369934}
+  - component: {fileID: 73369935}
+  m_Layer: 0
+  m_Name: FinalDoor
+  m_TagString: FinalDoor
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &73369934
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73369933}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 635853146432115498}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &73369935
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73369933}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6560521616147965601, guid: 0e60faffc52ae465982ca1324b9246f3, type: 3}
 --- !u!1001 &77791131
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -690,8 +735,8 @@ GameObject:
   - component: {fileID: 364476213}
   - component: {fileID: 364476214}
   m_Layer: 0
-  m_Name: IncorrectChange3
-  m_TagString: IncorrectDoor
+  m_Name: BallerinaChange1
+  m_TagString: BallerinaDoor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1270,8 +1315,8 @@ GameObject:
   - component: {fileID: 527656143}
   - component: {fileID: 527656144}
   m_Layer: 0
-  m_Name: CorrectChange3
-  m_TagString: CorrectDoor
+  m_Name: DoctorChange3
+  m_TagString: DoctorDoor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1461,8 +1506,8 @@ GameObject:
   - component: {fileID: 586632159}
   - component: {fileID: 586632160}
   m_Layer: 0
-  m_Name: CorrectChange2
-  m_TagString: CorrectDoor
+  m_Name: DoctorChange2
+  m_TagString: DoctorDoor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1673,8 +1718,8 @@ GameObject:
   - component: {fileID: 647019707}
   - component: {fileID: 647019708}
   m_Layer: 0
-  m_Name: IncorrectChange2
-  m_TagString: IncorrectDoor
+  m_Name: BallerinaChange2
+  m_TagString: BallerinaDoor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1955,7 +2000,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 823946279}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -2}
+  m_LocalPosition: {x: 0, y: 0, z: 133.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1087497197}
@@ -2178,8 +2223,8 @@ GameObject:
   - component: {fileID: 918600392}
   - component: {fileID: 918600393}
   m_Layer: 0
-  m_Name: IncorrectChange1
-  m_TagString: IncorrectDoor
+  m_Name: BallerinaChange3
+  m_TagString: BallerinaDoor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3380,8 +3425,8 @@ GameObject:
   - component: {fileID: 1665292220}
   - component: {fileID: 1665292221}
   m_Layer: 0
-  m_Name: CorrectChange1
-  m_TagString: CorrectDoor
+  m_Name: DoctorChange1
+  m_TagString: DoctorDoor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4858,7 +4903,8 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: 6.5854455e-10, z: 6.5854455e-10, w: 0.7071068}
   m_LocalPosition: {x: -13.638282, y: 0.2127126, z: -0.06355164}
   m_LocalScale: {x: 1.1737881, y: 1.029025, z: 1.029025}
-  m_Children: []
+  m_Children:
+  - {fileID: 73369934}
   m_Father: {fileID: 543450652224376596}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5221,13 +5267,43 @@ GameObject:
   - component: {fileID: 1937684185916760677}
   - component: {fileID: 2493316449548200897}
   - component: {fileID: 3663405556584497595}
+  - component: {fileID: 1859326672306908411}
+  - component: {fileID: 1859326672306908412}
   m_Layer: 0
-  m_Name: CorrectDoor03
+  m_Name: CorrectDoor01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1859326672306908411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859326672306908410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 849dbfee09216ad4d9c8aa8d3dc65893, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  redMat: {fileID: 2100000, guid: d8371e60eb2dc4481bf126ef9884b470, type: 2}
+  greenMat: {fileID: 2100000, guid: 8b027100ca65e4898ad224d8c7d9de36, type: 2}
+--- !u!64 &1859326672306908412
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859326672306908410}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3137551112527831294, guid: 0e60faffc52ae465982ca1324b9246f3, type: 3}
 --- !u!23 &1871811582579961767
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5281,7 +5357,7 @@ GameObject:
   - component: {fileID: 2440136700927759280}
   - component: {fileID: 2969151145381973440}
   m_Layer: 0
-  m_Name: IncorrectDoor02
+  m_Name: IncorrectDoor03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5350,7 +5426,7 @@ GameObject:
   - component: {fileID: 2816051536599271755}
   - component: {fileID: 5364927708880238}
   m_Layer: 0
-  m_Name: IncorrectDoor00
+  m_Name: IncorrectDoor01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5678,7 +5754,7 @@ GameObject:
   - component: {fileID: 4872469772940350725}
   - component: {fileID: 4567977084345757387}
   m_Layer: 0
-  m_Name: CorrectDoor00
+  m_Name: CorrectDoor04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6541,7 +6617,7 @@ GameObject:
   - component: {fileID: 3648285383552566085}
   - component: {fileID: 4806317729239208135}
   m_Layer: 0
-  m_Name: IncorrectDoor01
+  m_Name: IncorrectDoor02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7042,7 +7118,7 @@ GameObject:
   - component: {fileID: 2722182873826662713}
   - component: {fileID: 4068892444681687178}
   m_Layer: 0
-  m_Name: CorrectDoor01
+  m_Name: CorrectDoor03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

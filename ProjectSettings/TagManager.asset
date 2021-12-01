@@ -6,10 +6,11 @@ TagManager:
   tags:
   - PickUp
   - Obstacle
-  - CorrectDoor
-  - IncorrectDoor
   - EndLevelScene
   - BadPickUp
+  - FinalDoor
+  - BallerinaDoor
+  - DoctorDoor
   layers:
   - Default
   - TransparentFX

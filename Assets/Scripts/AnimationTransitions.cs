@@ -58,14 +58,20 @@ public class AnimationTransitions : MonoBehaviour
 
             StartCoroutine(animationWait());
 
-            gameManager.playerMovementScript.movementLimit = 0;
+            //gameManager.playerMovementScript.movementLimit = 0;
             gameManager.playerMovementScript.movementSpeed = 0;
-            gameManager.playerMovementScript.touchSensitivity = 0;
+            //gameManager.playerMovementScript.touchSensitivity = 0;
 
             scoreCanvas.gameObject.SetActive(false);
             playerOne.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
             mainCam.gameObject.SetActive(false);
             endCam.gameObject.SetActive(true);
+        }
+
+        if (other.tag == "FinalDoor")
+        {
+            gameManager.playerMovementScript.movementLimit = 0;
+            gameManager.playerMovementScript.touchSensitivity = 0;
         }
     }
 }
