@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028346, g: 0.22571373, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2000,7 +2000,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 823946279}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 133.6}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1087497197}
@@ -5288,6 +5288,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 849dbfee09216ad4d9c8aa8d3dc65893, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  docDoor1: {fileID: 0}
+  docDoor2: {fileID: 0}
+  docDoor3: {fileID: 0}
+  balDoor1: {fileID: 0}
+  balDoor2: {fileID: 0}
+  balDoor3: {fileID: 0}
   redMat: {fileID: 2100000, guid: d8371e60eb2dc4481bf126ef9884b470, type: 2}
   greenMat: {fileID: 2100000, guid: 8b027100ca65e4898ad224d8c7d9de36, type: 2}
 --- !u!64 &1859326672306908412

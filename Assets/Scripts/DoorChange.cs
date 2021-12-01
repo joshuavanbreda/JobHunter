@@ -50,5 +50,8 @@ public class DoorChange : MonoBehaviour
         }
 
         if (other.name == "")
+        {
+
+        }
     }
 }
