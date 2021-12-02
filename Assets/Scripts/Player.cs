@@ -42,6 +42,9 @@ public class Player : MonoBehaviour
     public GameObject toolBox;
     public GameObject doctorBag;
 
+    public bool scoreDocCheck;
+    public bool scoreBalCheck;
+
 
     void Start()
     {
@@ -54,6 +57,9 @@ public class Player : MonoBehaviour
         doc3.gameObject.SetActive(false);
         docBal1.gameObject.SetActive(false);
         docBal2.gameObject.SetActive(false);
+
+        scoreBalCheck = false;
+        scoreBalCheck = false;
     }
 
     void Update()
@@ -85,13 +91,15 @@ public class Player : MonoBehaviour
 
         if (other.tag == "DoctorDoor")
         {
-
             Instantiate(particlePowerUp, particlesPosition.transform.position, Quaternion.identity);
             other.gameObject.SetActive(false);
-            TakeScore(CorrectDoorValue);
+            //TakeScore(CorrectDoorValue);
             Debug.Log(currentScore);
-            if (other.gameObject.name == "CorrectChange1")
+            if (other.gameObject.name == "DoctorChange1")
             {
+                scoreDocCheck = true;
+                scoreBalCheck = false;
+
                 nakedPlayer.gameObject.SetActive(false);
                 doc1.gameObject.SetActive(true);
                 doc2.gameObject.SetActive(false);
@@ -102,7 +110,7 @@ public class Player : MonoBehaviour
                 coat.SetActive(false);
             }
 
-            if (other.gameObject.name == "CorrectChange2")
+            if (other.gameObject.name == "DoctorChange2")
             {
                 nakedPlayer.gameObject.SetActive(false);
                 doc1.gameObject.SetActive(false);
@@ -113,7 +121,7 @@ public class Player : MonoBehaviour
 
                 hat.SetActive(false);
             }
-            if(other.gameObject.name == "CorrectChange3")
+            if(other.gameObject.name == "DoctorChange3")
             {
                 win = true;
                 nakedPlayer.gameObject.SetActive(false);
@@ -124,6 +132,15 @@ public class Player : MonoBehaviour
                 docBal2.gameObject.SetActive(false);
 
                 doctorBag.SetActive(false);
+            }
+
+            if (scoreDocCheck == true)
+            {
+                TakeScore(CorrectDoorValue);
+            }
+            else if (scoreBalCheck == true)
+            {
+                TakeScore(-CorrectDoorValue);
             }
         }
 
@@ -137,19 +154,20 @@ public class Player : MonoBehaviour
 
         if (other.tag == "BallerinaDoor")
         {
+            Instantiate(particleHearts, particlesPosition.transform.position, Quaternion.identity);
             other.gameObject.SetActive(false);
 
-            TakeScore(IncorrectDoorValue);
 
             Debug.Log(currentScore);
 
             if(other.gameObject.name == "BallerinaChange1")
             {
+                scoreDocCheck = false;
+                scoreBalCheck = true;
+
                 other.gameObject.SetActive(false);
 
                 shoes.SetActive(false);
-                Instantiate(particleHearts, particlesPosition.transform.position, Quaternion.identity);
-                return;
             }
 
             if(other.gameObject.name == "BallerinaChange2")
@@ -164,7 +182,6 @@ public class Player : MonoBehaviour
                 docBal2.gameObject.SetActive(false);
 
                 toTo.SetActive(false);
-                Instantiate(particleHearts, particlesPosition.transform.position, Quaternion.identity);
             }
 
             if (other.gameObject.name == "BallerinaChange3")
@@ -179,8 +196,21 @@ public class Player : MonoBehaviour
                 docBal2.gameObject.SetActive(true);
 
                 toolBox.SetActive(false);
-                Instantiate(particlePlumber, particlesPosition.transform.position, Quaternion.identity);
             }
+
+            if (scoreBalCheck == true)
+            {
+                TakeScore(CorrectDoorValue);
+            }
+            else if (scoreDocCheck == true)
+            {
+                TakeScore(-CorrectDoorValue);
+            }
+        }
+
+        if (other.tag == "FinalDoor")
+        {
+            TakeScore(CorrectDoorValue);
         }
 
         if (other.tag == "EndLevelScene" && win == true)

@@ -1707,6 +1707,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 297d28350ce7d49b8a1360b6429ec0ce, type: 3}
+--- !u!1 &637701558 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 22cba00477753024fa6f1fa912548d6f,
+    type: 3}
+  m_PrefabInstance: {fileID: 2063665063}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &647019706
 GameObject:
   m_ObjectHideFlags: 0
@@ -1985,6 +1991,7 @@ GameObject:
   - component: {fileID: 823946282}
   - component: {fileID: 823946281}
   - component: {fileID: 823946285}
+  - component: {fileID: 823946286}
   m_Layer: 0
   m_Name: MainPlayer
   m_TagString: Untagged
@@ -2047,8 +2054,8 @@ MonoBehaviour:
   maxScore: 100
   currentScore: 0
   win: 0
-  CorrectDoorValue: 20
-  IncorrectDoorValue: -20
+  CorrectDoorValue: 25
+  IncorrectDoorValue: -25
   PickUpValue: 2
   ObstacleLoseValue: -5
   particlesPosition: {fileID: 1087497196}
@@ -2074,6 +2081,8 @@ MonoBehaviour:
   hat: {fileID: 1946310689}
   toolBox: {fileID: 478592261}
   doctorBag: {fileID: 1818971354}
+  scoreDocCheck: 0
+  scoreBalCheck: 0
 --- !u!136 &823946283
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2123,6 +2132,29 @@ MonoBehaviour:
   playerOne: {fileID: 823946279}
   mainCam: {fileID: 963194227}
   endCam: {fileID: 630695672}
+--- !u!114 &823946286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823946279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 849dbfee09216ad4d9c8aa8d3dc65893, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  docDoor1: {fileID: 1859326672306908410}
+  docDoor2: {fileID: 8923149587294791590}
+  docDoor3: {fileID: 7512734065116615667}
+  balDoor1: {fileID: 2209397442633382102}
+  balDoor2: {fileID: 6445354396740529263}
+  balDoor3: {fileID: 1884206550724940288}
+  docNameplate: {fileID: 637701558}
+  balNameplate: {fileID: 2106129679}
+  redMat: {fileID: 2100000, guid: d8371e60eb2dc4481bf126ef9884b470, type: 2}
+  greenMat: {fileID: 2100000, guid: 8b027100ca65e4898ad224d8c7d9de36, type: 2}
+  blueMat: {fileID: 2100000, guid: 578682423ce1f044d9dc9230abf0cdfc, type: 2}
 --- !u!1001 &853239784
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2767,7 +2799,7 @@ GameObject:
   - component: {fileID: 1388293719}
   - component: {fileID: 1388293718}
   m_Layer: 0
-  m_Name: NamePlate01 (2)
+  m_Name: FinalNameplate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4413,6 +4445,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DoctorText
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 22cba00477753024fa6f1fa912548d6f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22cba00477753024fa6f1fa912548d6f, type: 3}
 --- !u!1001 &2096384698
@@ -4504,6 +4541,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db5a449e500743a44a75ecfbc22323d4, type: 3}
+--- !u!1 &2106129679 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: db5a449e500743a44a75ecfbc22323d4,
+    type: 3}
+  m_PrefabInstance: {fileID: 2096384698}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2131739213
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5267,7 +5310,6 @@ GameObject:
   - component: {fileID: 1937684185916760677}
   - component: {fileID: 2493316449548200897}
   - component: {fileID: 3663405556584497595}
-  - component: {fileID: 1859326672306908411}
   - component: {fileID: 1859326672306908412}
   m_Layer: 0
   m_Name: CorrectDoor01
@@ -5276,26 +5318,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1859326672306908411
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1859326672306908410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 849dbfee09216ad4d9c8aa8d3dc65893, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  docDoor1: {fileID: 0}
-  docDoor2: {fileID: 0}
-  docDoor3: {fileID: 0}
-  balDoor1: {fileID: 0}
-  balDoor2: {fileID: 0}
-  balDoor3: {fileID: 0}
-  redMat: {fileID: 2100000, guid: d8371e60eb2dc4481bf126ef9884b470, type: 2}
-  greenMat: {fileID: 2100000, guid: 8b027100ca65e4898ad224d8c7d9de36, type: 2}
 --- !u!64 &1859326672306908412
 MeshCollider:
   m_ObjectHideFlags: 0
