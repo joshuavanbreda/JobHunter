@@ -11,6 +11,11 @@ TagManager:
   - FinalDoor
   - BallerinaDoor
   - DoctorDoor
+  - DoctorPickUp
+  - BallerinaPickUp
+  - Undefined
+  - PickUp1
+  - PickUp2
   layers:
   - Default
   - TransparentFX

@@ -58,7 +58,7 @@ public class Player : MonoBehaviour
         docBal1.gameObject.SetActive(false);
         docBal2.gameObject.SetActive(false);
 
-        scoreBalCheck = false;
+        scoreDocCheck = false;
         scoreBalCheck = false;
     }
 
@@ -70,20 +70,62 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        if (other.tag == "PickUp")
+        if (other.tag == "DoctorPickUp" && scoreDocCheck == true)
+        {
+            TakeScore(PickUpValue);
+            other.gameObject.SetActive(false);
+        }
+        else if (other.tag == "DoctorPickUp" && scoreBalCheck == true)
+        {
+            TakeScore(-PickUpValue);
+            other.gameObject.SetActive(false);
+        }
+
+        if (other.tag == "BallerinaPickUp" && scoreBalCheck == true)
+        {
+            TakeScore(PickUpValue);
+            other.gameObject.SetActive(false);
+        }
+        else if (other.tag == "BallerinaPickUp" && scoreDocCheck == true)
+        {
+            TakeScore(-PickUpValue);
+            other.gameObject.SetActive(false);
+        }
+
+
+        if (other.tag == "PickUp1")
         {
             Instantiate(particlePlus, particlesPosition.transform.position, Quaternion.identity);
-            TakeScore(PickUpValue);
-            Debug.Log(currentScore);
+
+            if (scoreDocCheck == true)
+            {
+                TakeScore(PickUpValue);
+                Debug.Log(currentScore);
+            }
+            else if (scoreBalCheck == true)
+            {
+                TakeScore(-PickUpValue);
+                Debug.Log(currentScore);
+            }
             other.gameObject.SetActive(false);
 
             
         }
 
-        if (other.tag == "BadPickUp")
+        if (other.tag == "PickUp2")
         {
-            TakeScore(-PickUpValue);
-            Debug.Log(currentScore);
+            Instantiate(particlePlus, particlesPosition.transform.position, Quaternion.identity);
+
+            if (scoreBalCheck == true)
+            {
+                TakeScore(PickUpValue);
+                Debug.Log(currentScore);
+            }
+            else if (scoreDocCheck == true)
+            {
+                TakeScore(-PickUpValue);
+                Debug.Log(currentScore);
+            }
 
             other.gameObject.SetActive(false);
         }
@@ -97,6 +139,7 @@ public class Player : MonoBehaviour
             Debug.Log(currentScore);
             if (other.gameObject.name == "DoctorChange1")
             {
+                Debug.Log("Color check!");
                 scoreDocCheck = true;
                 scoreBalCheck = false;
 
@@ -144,13 +187,13 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (other.tag == "Obstacle")                    //Obstacle Child Trigger removal
-        {
-            other.gameObject.SetActive(false);
+        //if (other.tag == "Obstacle")                    //Obstacle Child Trigger removal
+        //{
+        //    other.gameObject.SetActive(false);
 
-            TakeScore(ObstacleLoseValue);
-            Debug.Log(currentScore);
-        }
+        //    TakeScore(ObstacleLoseValue);
+        //    Debug.Log(currentScore);
+        //}
 
         if (other.tag == "BallerinaDoor")
         {
